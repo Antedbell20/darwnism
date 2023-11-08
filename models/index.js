@@ -1,0 +1,17 @@
+const Animal = require('./Animal');
+const User = require('./user');
+const Score = require('./Score');
+
+User.hasMany(Score, {
+    foreignKey: 'user_id',
+});
+
+Score.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+User.belongsTo(Animal, {
+    foreignKey: 'rank',
+});
+
+modeule.exports = { Animal, User, Score };  
