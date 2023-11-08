@@ -1,5 +1,5 @@
 const Animal = require('./Animal');
-const User = require('./user');
+const User = require('./user'); //WTF?
 const Score = require('./Score');
 
 User.hasMany(Score, {
