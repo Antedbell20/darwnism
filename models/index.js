@@ -14,4 +14,4 @@ User.belongsTo(Animal, {
     foreignKey: 'rank',
 });
 
-modeule.exports = { Animal, User, Score };  
+module.exports = { Animal, User, Score };  
