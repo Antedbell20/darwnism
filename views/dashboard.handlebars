@@ -7,9 +7,12 @@
 {{!-- Current users "level" --}}
 
 {{!-- Image of their rank(animal) --}}
-
+You are rank: {{animal}}
+{{determineRankImg rank}}
 {{!-- Previous Scores (User) --}}
-
+{{#each score}}
+{{>scoreblock}}
+{{/each}}
 {{!-- ----------------------------------------------------- --}}
 
 {{!-- Quiz Selector (Card)--}}

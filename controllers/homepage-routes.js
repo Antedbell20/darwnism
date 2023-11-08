@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Animal, Score} = require('../models')
 
 router.get('/', (req, res) => {
     try{
@@ -8,9 +9,19 @@ router.get('/', (req, res) => {
     }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try{
-        res.render('dashboard');
+        const scoreData = await Score.findAll({
+            // where:{
+            //     user_id: req.session.id
+            // }
+        });
+
+        const score = (scoreData).map((score)=> score.dataValues);
+        res.render('dashboard', {
+            score,
+            loggedIn: req.session.loggedIn
+        });
     }catch(err){
         res.status(500).json(err)
     }
