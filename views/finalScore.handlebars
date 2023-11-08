@@ -1,10 +1,13 @@
-{{!-- Retry Button (takes in same api key to restart same quiz) --}}
-<button>Retry</button>
+
+{{!-- Home Button (Dashboard) --}}
+<a href="/">Home</a>
+
 {{!-- Final Score is ?? --}}
 <h3>Your final Score is: {{score}}</h3>
 
 {{!-- Display animal lvl and image --}}
-<h3>Your animal is: {{animal}} {{determineRankImg rank}} </h3>
-{{!-- Home Button (Dashboard) --}}
+<h3>Your animal is: {{animal}} {{{determineRankImg rank}}} </h3>
+{{!-- Retry Button (takes in same api key to restart same quiz) --}}
+<button>Retry</button>
 
-<a href="/">Home</a>
+
