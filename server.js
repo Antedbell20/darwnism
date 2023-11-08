@@ -1,15 +1,41 @@
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
+const xphbs = require('express-handlebars');
 
+const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const hbs = xphbs.create({helpers});
 
+const sesh = {
+  secret:"]_zMsAE|bE16i`YDURr&l#Hz-CK:Da(nXD8'bcS~e1o(9s4-S_!QiCF*-CKHZ2%^P[;RDLL4A@!yi5u';8PacQpnQr&pH]SBt5C,",
+  cookie: {
+    maxAge: 14400000
+  },
+  resave: true,
+  rolling: true,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db:sequelize,
+  }) 
+};
 
+app.use(session(sesh));
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
