@@ -4,7 +4,7 @@ const userRoutes = require('./user-routes');
 // const animalRoutes = require('./animal-routes');
 // const scoreRoutes = require('./score-routes');
 
-router.use('/users', userRoutes);
+router.use('/user', userRoutes);
 // router.use('/animals', animalRoutes);
 // router.use('/scores', scoreRoutes);
 
