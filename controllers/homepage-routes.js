@@ -1,4 +1,4 @@
-const router =require('express').Router();
+const router = require('express').Router();
 
 router.get('/', (req, res) => {
     try{
@@ -7,3 +7,5 @@ router.get('/', (req, res) => {
         res.status(500).json(err)
     }
 })
+
+module.exports = router;
