@@ -1,14 +1,27 @@
 {{!-- Home Button (Dashboard) --}}
-<button><a href="/">Home</a></button>
-<div class="row">
+<style>
+  #intro {
+        background-image: url("/images/logo.PNG");
+        height: 115vh;
+        width: 140vh;
+      }
+      </style>
+<div id="intro" class="bg-image col-xs-12">
+    <button><a href="/">Home</a></button>
+    <div class="row">
     {{!-- Top Ranked Players --}}
-  <div class="col-xs-6 col-md-4"><h2>Top Players</h2></div>
+    <div class="col-xs-6 col-md-4"><h2>Top Players</h2></div>
      {{!-- username, overall score, animal rank, and sml animal image for rank --}}
-  <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.rank}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
-</div>
-<div class="row">
+     <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.rank}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
+    </div>
+    <div class="row">
   {{!-- Highest Quiz Scores --}}
-  <div class="col-xs-6 col-md-4"><h2>Highest quiz scores</h2></div>
+    <div class="col-xs-6 col-md-4"><h2>Highest quiz scores</h2></div>
    {{!-- username, quiz score, animal rank, and sml animal image for rank --}}
-  <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.score}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
+    <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.score}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
+    </div>
 </div>
+ 
+  
+  
+ 
