@@ -44,3 +44,6 @@ startQuizBtn.addEventListener("click", function(){
         console.log(err);
     })
 });
+
+const answerArray = `{{answerArray}}`
+
