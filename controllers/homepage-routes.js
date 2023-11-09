@@ -19,9 +19,9 @@ router.get('/dashboard', async (req, res) => {
 
         const score = (scoreData).map((score)=> score.dataValues);
 
-        const rank = 99;
+        const rank = 750;
 
-        const animal = "goldfish";
+        const animal = "Rat";
 
         const username = "username";
 
