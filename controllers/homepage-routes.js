@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Animal, Score} = require('../models')
+const { Animal, Score} = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     try{
@@ -9,7 +10,7 @@ router.get('/', (req, res) => {
     }
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try{
         const scoreData = await Score.findAll({
             // where:{
@@ -30,7 +31,7 @@ router.get('/dashboard', async (req, res) => {
             animal,
             rank,
             username,
-            loggedIn: req.session.loggedIn
+            logged_in: req.session.logged_in
         });
     }catch(err){
         console.log(err)
@@ -55,11 +56,11 @@ router.get('/highScore', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    try{
-        res.render('login');
-    }catch(err){
-        res.status(500).json(err)
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
     }
+    res.render('login');
 });
 
 router.get('/questionPage', (req, res) => {
