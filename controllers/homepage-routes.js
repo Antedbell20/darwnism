@@ -18,11 +18,19 @@ router.get('/dashboard', async (req, res) => {
         });
 
         const score = (scoreData).map((score)=> score.dataValues);
+
+        const rank = 99;
+
+        const animal = "goldfish";
+
         res.render('dashboard', {
             score,
+            animal,
+            rank,
             loggedIn: req.session.loggedIn
         });
     }catch(err){
+        console.log(err)
         res.status(500).json(err)
     }
 });

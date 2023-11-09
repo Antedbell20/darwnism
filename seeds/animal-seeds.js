@@ -5,7 +5,7 @@ animalData = [
         name: 'Dolphin',
     },
     {
-        name: 'Tiger',
+        name: 'Pig',
     },
     {
         name: 'Rat',
