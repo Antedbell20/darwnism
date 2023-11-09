@@ -1,12 +1,14 @@
 
 {{!-- Home Button (Dashboard) --}}
 <a href="/">Home</a>
-
+<div class="row">
 {{!-- Final Score is ?? --}}
-<h3>Your final Score is: {{score}}</h3>
+  <div class="col-xs-6 col-md-4"><h2>Your final Score is: {{score}}</h2></div>
+  {{!-- Display animal lvl and image --}}
+  <div class="col-xs-6 col-md-4"><h2>Your animal is: {{animal}} {{{determineRankImg rank}}}</h2> </div>
+</div>
 
-{{!-- Display animal lvl and image --}}
-<h3>Your animal is: {{animal}} {{{determineRankImg rank}}} </h3>
+
 {{!-- Retry Button (takes in same api key to restart same quiz) --}}
 <button>Retry</button>
 
