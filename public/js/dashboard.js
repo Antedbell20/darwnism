@@ -39,6 +39,7 @@ startQuizBtn.addEventListener("click", function(){
             console.log('data res' + data.results[i].question)
             console.log(answerArray)
         }
+        document.location.replace('/questionPage');
     })
     .catch(function(err){
         console.log(err);
