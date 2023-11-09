@@ -30,6 +30,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
                     //     animal: { name: 'Rat' }
                     //   }
 
+
                     model: Score,
                     attributes: ['score'], 
                 },
