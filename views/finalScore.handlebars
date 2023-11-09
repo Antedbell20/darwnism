@@ -1,15 +1,23 @@
-
+<style>
+  #intro {
+        background-image: url("/images/logo.PNG");
+        height: 115vh;
+        width: 140vh;
+      }
+      </style>
 {{!-- Home Button (Dashboard) --}}
-<a href="/">Home</a>
+<div id="intro" class="bg-image col-xs-12">
+<button><a href="/">Home</a></button>
 <div class="row">
 {{!-- Final Score is ?? --}}
   <div class="col-xs-6 col-md-4"><h2>Your final Score is: {{score}}</h2></div>
   {{!-- Display animal lvl and image --}}
-  <div class="col-xs-6 col-md-4"><h2>Your animal is: {{animal}} {{{determineRankImg rank}}}</h2> </div>
+  <div class="col-xs-6 col-md-4"><h2>Your animal is: {{animal}} {{{determineRankImg user.rank}}}</h2> </div>
 </div>
 
 
 {{!-- Retry Button (takes in same api key to restart same quiz) --}}
 <button>Retry</button>
+</div>
 
 
