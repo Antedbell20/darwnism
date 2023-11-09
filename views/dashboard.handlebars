@@ -12,12 +12,12 @@
 <div class="container text-center mt-5 p-5">
 <div class="card">
 <h1>
-Welcome: {{username}}
+Welcome: {{user.username}}
 </h1>
 <h2>
 You are rank: {{animal}}
 </h2>
-{{{determineRankImg rank}}}
+{{{determineRankImg user.rank}}}
 </div>
 {{!-- Previous Scores (User) --}}
 {{#each score}}
