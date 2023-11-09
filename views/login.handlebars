@@ -1,33 +1,59 @@
-{{!-- Log In / Sign Up Handler --}}
-<h2>Login</h2>
-<form class="login-form">
- <div>
-    <label for="username-login">Username:</label>
-     <input type="text" id="username-login" />
- </div>
+{{! Log In / Sign Up Handler }}
+<div class="container">
+  <div class="card">
+    <h2 class="card-title card-header text-center">Login</h2>
+    <form class="login-form card-body">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="username-login"
+          placeholder="username"
+        />
+        <label for="username-login">Username:</label>
+      </div>
 
- <div>
-    <label for="password-login">Password:</label>
-     <input type="password" id="password-login" />
- </div>
- <div>
-    <button  type="submit">login</button>
- </div>
-</form>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password-login"
+          placeholder="password"
+        />
+        <label for="password-login">Password:</label>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-outline-secondary">Login</button>
+      </div>
+    </form>
+  </div>
 
-<form class="signup-form">
-<h2 class="">Signup</h2>
- <div class="">
-    <label for="username-signup">Create a Username:</label>
-    <input class="" type="text" id="username-signup" />
- </div>
- <div class="">
-    <label for="password-signup">Create a Password:</label>
-    <input class="form-input" type="password" id="password-signup" />
- </div>
- <div class="">
-        <button class="btn btn-primary" type="submit">signup</button>
- </div>
- </form>
+  <div class="card">
+    <h2 class="card-title card-header text-center">Signup</h2>
+    <form class="signup-form card-body">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="username-signup"
+          placeholder="Create Username"
+        />
+        <label for="username-signup">Create Username:</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password-signup"
+          placeholder="Create Password"
+        />
+        <label for="password-signup">Create a Password:</label>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-outline-secondary">Signup</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script src="/js/login.js"></script>
