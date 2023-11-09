@@ -23,10 +23,13 @@ router.get('/dashboard', async (req, res) => {
 
         const animal = "goldfish";
 
+        const username = "username";
+
         res.render('dashboard', {
             score,
             animal,
             rank,
+            username,
             loggedIn: req.session.loggedIn
         });
     }catch(err){
