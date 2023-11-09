@@ -11,7 +11,7 @@ Score.belongsTo(User, {
 });
 
 User.belongsTo(Animal, {
-    foreignKey: 'rank',
+    foreignKey: 'rank', as: 'animal'
 });
 
 module.exports = { Animal, User, Score };  

@@ -16,7 +16,7 @@ const hbs = xphbs.create({ helpers });
 const sesh = {
   secret:"]_zMsAE|bE16i`YDURr&l#Hz-CK:Da(nXD8'bcS~e1o(9s4-S_!QiCF*-CKHZ2%^P[;RDLL4A@!yi5u';8PacQpnQr&pH]SBt5C,",
   cookie: {
-    maxAge: 10000,
+    maxAge: 3000000,
   },
   rolling: true,
   resave: true,

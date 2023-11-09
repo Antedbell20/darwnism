@@ -32,7 +32,7 @@ User.init({
   },
   rank: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: 
     {
       model: 'animal',
