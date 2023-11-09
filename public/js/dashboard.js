@@ -3,8 +3,9 @@ const quizLengthSelection = document.querySelector('#quizLength');
 const DifficultySelection = document.querySelector('#quizDifficulty');
 const startQuizBtn = document.querySelector('#startQuizBtn');
 
-const quizArray = [];
+
 const questionNo = 0;
+
 
 function populateQuestionBlock(){};
 
@@ -22,14 +23,21 @@ startQuizBtn.addEventListener("click", function(){
     })
     .then(function(data) {
         console.log(data.results)
+
         for (let i = 0; i < data.results.length; i++) {
-            quizArray
+            const answerArray = [];
+            
+         
+            answerArray.push(data.results[i].correct_answer)
+            
             console.log("question: "+ data.results[i].question);
             console.log("correct answer: "+ data.results[i].correct_answer);
             for (let j = 0; j < data.results[i].incorrect_answers.length; j++) {
-                
+                answerArray.push(data.results[i].incorrect_answers[j])
                 console.log("incorrect answers: "+ data.results[i].incorrect_answers[j]);
             }
+            console.log('data res' + data.results[i].question)
+            console.log(answerArray)
         }
     })
     .catch(function(err){
