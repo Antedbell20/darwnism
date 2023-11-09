@@ -1,11 +1,14 @@
 {{!-- Home Button (Dashboard) --}}
 <a href="/">Home</a>
-
-{{!-- Top Ranked Players --}}
-<h2>Top Players</h2>
-{{!-- username, overall score, animal rank, and sml animal image for rank --}}
-<h3>{{user}} {{overallScore}} {{animal}} {{{determineRankImg rank}}}</h3>
-{{!-- Highest Quiz Scores --}}
-<h2>Highest quiz scores</h2>
-{{!-- username, quiz score, animal rank, and sml animal image for rank --}}
-<h3>{{user}} {{score}} {{animal}} {{{determineRankImg rank}}}</h3>
+<div class="row">
+    {{!-- Top Ranked Players --}}
+  <div class="col-xs-6 col-md-4"><h2>Top Players</h2></div>
+     {{!-- username, overall score, animal rank, and sml animal image for rank --}}
+  <div class="col-xs-6 col-md-4"><h3>{{user}} {{overallScore}} {{animal}} {{{determineRankImg rank}}}</h3></div>
+</div>
+<div class="row">
+  {{!-- Highest Quiz Scores --}}
+  <div class="col-xs-6 col-md-4"><h2>Highest quiz scores</h2></div>
+   {{!-- username, quiz score, animal rank, and sml animal image for rank --}}
+  <div class="col-xs-6 col-md-4"><h3>{{user}} {{score}} {{animal}} {{{determineRankImg rank}}}</h3></div>
+</div>
