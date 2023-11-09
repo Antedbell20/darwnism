@@ -23,7 +23,7 @@ startQuizBtn.addEventListener("click", function(){
     .then(function(data) {
         console.log(data.results)
         for (let i = 0; i < data.results.length; i++) {
-            quizArray
+            
             console.log("question: "+ data.results[i].question);
             console.log("correct answer: "+ data.results[i].correct_answer);
             for (let j = 0; j < data.results[i].incorrect_answers.length; j++) {
