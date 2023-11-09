@@ -18,7 +18,7 @@ User.init({
   username: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+    // unique: true,
 
   },
   password: {
@@ -32,7 +32,7 @@ User.init({
   },
   rank: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: 
     {
       model: 'animal',
