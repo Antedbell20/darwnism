@@ -16,6 +16,7 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Get all users
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
@@ -32,7 +33,23 @@ router.get('/', async (req, res) => {
     }
 });
 
-// added by Ian
+// update user rank
+
+router.put('/:id', async (req, res) => {
+    try {
+        const userData = await User.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.status(200).json(userData);
+    } catch (error) {
+        res.status(400).json(error);
+        console.log(error);
+    }
+});
+
+// login user
  router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { username: req.body.username } });
@@ -66,6 +83,7 @@ router.get('/', async (req, res) => {
     
   });
   
+  // logout user
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {
