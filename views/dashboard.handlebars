@@ -7,19 +7,33 @@
 {{!-- Current users "level" --}}
 
 {{!-- Image of their rank(animal) --}}
-<div class="container">
+<div class="row">
+<div class="col">
+<div class="container text-center">
+<div class="card">
+<h1>
+Welcome: {{username}}
+</h1>
+<h2>
 You are rank: {{animal}}
+</h2>
 {{{determineRankImg rank}}}
-
+</div>
 {{!-- Previous Scores (User) --}}
 {{#each score}}
 {{>scoreblock}}
 {{/each}}
 </div>
+</div>
 {{!-- ----------------------------------------------------- --}}
 
 {{!-- Quiz Selector (Card)--}}
-<div class="container">
+<div class="col">
+<div class="container card">
+<div class="card-title text-center">
+<h2 class="card-title">Take A Quiz!</h2>
+</div>
+<div class="card-body">
 <select class="form-select form-select-lg mb-3" aria-label="Large select example">
   <option selected>Select Your Quiz Topic</option>
   <option value="1">Animals</option>
@@ -64,6 +78,11 @@ You are rank: {{animal}}
   <option value="2">Medium</option>
   <option value="3">Hard</option>
 </select>
+
+<button type="button" class="btn btn-primary btn-lg">Start Quiz!</button>
+</div>
+</div>
+</div>
 </div>
 {{!-- Select Quiz Topic  --}}
 
