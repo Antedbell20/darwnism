@@ -10,57 +10,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="/images/logo.PNG" alt="Logo" width="100" height="100" class="d-inline-block"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <img src="/images/logo.PNG" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        {{#if logged_in}}
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">homepage</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/finalScore">finalScore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/highScore">highScore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/" id="logout">logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/questionPage">questionPage</a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">homepage</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/finalScore">finalScore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/highScore">highScore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/questionPage">questionPage</a>
-        </li>
-        {{/if}}
-      </ul>
-    </div>
+  <div class="logo-container">
+    <img src="/images/logo1.png" alt="Darwnism Logo" class="logo">
   </div>
-</nav>
     {{{body}}}
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
