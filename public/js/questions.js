@@ -12,10 +12,36 @@ for (let i = array.length -1; i > 0; i--) {
 return array;
 }
 
+const template = Handlebars.compile(`<div class="container mt-5">
+{{#each questionObjArray}}
+<div class="container">
+<div class="card text-center">
+  <div class="card-header">
+    {{question}}
+  </div>
+  <div class="card-body">
+    <p>{{correct_answer}}</p><a href="#" class="btn btn-primary">A</a>
+    <p>{{incorrect_answer}}</p><a href="#" class="btn btn-primary">B</a>
+    <p>{{incorrect_answer}}</p><a href="#" class="btn btn-primary">C</a>
+    <p>{{incorrect_answer}}</p><a href="#" class="btn btn-primary">D</a>
+    <h1>Hello!</h1>
+  </div>
+</div>
+</div>
+{{/each}}
+</div>
+</div>
+<script src="/js/questions.js"></script>`);
+
+const questionContainer = document.getElementById('questionContainer');
+questionContainer.innerHTML = template(questionObjArray);
+
 answerButtonA.addEventListener("click",function(){
     console.log(questionObjArray);
 
      for (let i = 0; i < questionObjArray.length; i++) {
+
+
 
         const answerArray = [];
         
@@ -32,4 +58,3 @@ answerButtonA.addEventListener("click",function(){
     }
 
 });
-
