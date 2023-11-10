@@ -1,15 +1,13 @@
-
-<div>
-{{!-- High Scores --}}
-  <nav><button><a href="/highScore">High Scores!</a></button>
-{{!-- Log In Button --}}
-    <button><a href="/login">Log In!</a></button>
-{{!-- Sign Up Button --}}
-    <button><a href="/login">Sign Up!</button>
-  </nav>
+<div class="back-btn">
+  <a class="btn btn-primary btn-lg active" href="/highScore" role="button">High Scores</a>
 </div>
-
-
-
-
-
+{{#if logged_in}}
+<li class="nav-item">
+  <a class="nav-link" href="/" id="logout">logout</a>
+</li>
+{{else}}
+<div class="d-grid gap-2 col-3 mx-auto homepage-btns">
+  <button class="btn btn-primary" type="button"><a href="/login"></a>Log In!</button>
+  <button class="btn btn-primary" type="button"><a href="/login"></a>Signup!</button>
+</div>
+{{/if}}
