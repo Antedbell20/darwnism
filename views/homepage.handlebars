@@ -1,13 +1,17 @@
-<div class="back-btn">
-  <a class="btn btn-primary btn-lg active" href="/highScore" role="button">High Scores</a>
+<div class="hs-btn">
+  <a class="btn btn-primary" href="/highScore" role="button">High Scores</a>
 </div>
-{{#if logged_in}}
-<li class="nav-item">
-  <a class="nav-link" href="/" id="logout">logout</a>
-</li>
-{{else}}
 <div class="d-grid gap-2 col-3 mx-auto homepage-btns">
-  <button class="btn btn-primary" type="button"><a href="/login"></a>Log In!</button>
-  <button class="btn btn-primary" type="button"><a href="/login"></a>Signup!</button>
+  {{#if logged_in}}
+  <a href="/" class="btn btn-primary" id="logout">Logout</a>
+  {{else}}
+  <a href="/login" class="btn btn-primary">Log In!</a>
+  <a href="/login" class="btn btn-primary">Signup!</a>
+  {{/if}}
 </div>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
 {{/if}}
+
+{{!-- i will add a link to the dashboard from the homepage when the user is logged in-Andrew --}}

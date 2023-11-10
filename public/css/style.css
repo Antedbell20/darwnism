@@ -2,10 +2,17 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
     margin: 0;
     padding: 0;
-    background-color: lightsteelblue;
+}
+
+body {
+    background-image : url("../images/background.jpg");
+    background-size: cover;
+    background-position: absolute;
+    background-repeat: no-repeat;
+    
 }
 
 .input {
@@ -26,7 +33,17 @@ html, body {
 .back-btn, .hs-btn {
     margin-top: 10px;
     margin-left: 7px;
-    display: flex;
+    /* display: flex; */
+}
+
+.hs-btn{
+    max-width: max-content;
+    width: 100%;
+}
+
+.hs-btn button:hover {
+    background-color: #ddd;
+    color: #000;
 }
 
 .logo-container {
@@ -36,17 +53,28 @@ html, body {
 .logo {
     position: absolute;
     z-index: -1;
-    left: 550px;
+    left: 567px;
     height: auto;
     width: 25%;
     border-radius: 100%;
-    opacity: 0.6;
-}     
+    opacity: 0.8;
+}
+
+
    
 .homepage-btns {
     position: absolute;
     top: 350px;
-    left: 585px;
+    left: 605px;
     width: 20%;
-    height: 20%;
+    height: 15%;
+    align-items: center;
+}
+
+.homepage-btns #logout {
+    position: absolute;
+    max-height: 44%;
+    width: 75%;
+    left: 37px;
+    top: 10px;
 }
