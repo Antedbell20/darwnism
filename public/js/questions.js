@@ -16,6 +16,7 @@ answerButtonA.addEventListener("click",function(){
     console.log(questionObjArray);
 
      for (let i = 0; i < questionObjArray.length; i++) {
+        
         const answerArray = [];
         
         answerArray.push(questionObjArray[i].correct_answer)
@@ -30,7 +31,6 @@ answerButtonA.addEventListener("click",function(){
         
     }
 
-    
 });
 
 
