@@ -5,9 +5,9 @@ const startQuizBtn = document.querySelector('#startQuizBtn');
 
 
 const questionNo = 0;
+const questionObjArray=[];
 
-
-function populateQuestionBlock(){};
+// function populateQuestionBlock(){};
 
 startQuizBtn.addEventListener("click", function(){
 
@@ -22,23 +22,9 @@ startQuizBtn.addEventListener("click", function(){
         return res.json();
     })
     .then(function(data) {
-        console.log(data.results)
-
-        for (let i = 0; i < data.results.length; i++) {
-            const answerArray = [];
-            
-         
-            answerArray.push(data.results[i].correct_answer)
-            
-            console.log("question: "+ data.results[i].question);
-            console.log("correct answer: "+ data.results[i].correct_answer);
-            for (let j = 0; j < data.results[i].incorrect_answers.length; j++) {
-                answerArray.push(data.results[i].incorrect_answers[j])
-                console.log("incorrect answers: "+ data.results[i].incorrect_answers[j]);
-            }
-            console.log('data res' + data.results[i].question)
-            console.log(answerArray)
-        }
+        questionObjArray.push(...data.results);
+        let questionString = JSON.stringify(questionObjArray);
+        localStorage.setItem("questionObjArray", questionString);
         document.location.replace('/questionPage');
     })
     .catch(function(err){
