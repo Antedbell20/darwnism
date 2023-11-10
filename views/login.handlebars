@@ -1,11 +1,16 @@
 {{! Log In / Sign Up Handler }}
-
-
-<div class="container">
-  <div class="card">
+<div class="hs-btn">
+  <a
+    class="btn btn-outline-secondary btn-sm active"
+    href="/"
+    role="button"
+  >Back</a>
+</div>
+<div class="login">
+  <div class="card input">
     <h2 class="card-title card-header text-center">Login</h2>
     <form class="login-form card-body">
-      <div class="form-floating mb-3">
+      <div class="form-floating mb-3 username-input">
         <input
           type="text"
           class="form-control"
@@ -15,7 +20,7 @@
         <label for="username-login">Username:</label>
       </div>
 
-      <div class="form-floating">
+      <div class="form-floating password-input">
         <input
           type="password"
           class="form-control"
@@ -24,13 +29,13 @@
         />
         <label for="password-login">Password:</label>
       </div>
-      <div class="d-grid gap-2 col-6 mx-auto">
+      <div class="d-grid gap-2 col-6 mx-auto login-btn">
         <button type="submit" class="btn btn-outline-secondary">Login</button>
       </div>
     </form>
   </div>
 
-  <div class="card">
+  <div class="card input">
     <h2 class="card-title card-header text-center">Signup</h2>
     <form class="signup-form card-body">
       <div class="form-floating mb-3">
@@ -58,8 +63,12 @@
   </div>
 </div>
 
-
-
 <script src="/js/login.js"></script>
 
- 
+<li class="nav-item">
+  <a class="nav-link" href="/" id="logout">logout</a>
+</li>
+
+{{!-- {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+      {{/if}} --}}
