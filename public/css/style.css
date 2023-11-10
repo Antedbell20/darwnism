@@ -1,3 +1,45 @@
-.container {
+* {
     box-sizing: border-box;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: lightsteelblue;
+}
+
+.input {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-btn {
+    margin: 20px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    
+}
+
+.logout-btn {
+    margin-top: 10px;
+    margin-left: 7px;
+    display: flex;
+}
+.back-btn {
+    margin-top: 10px;
+    margin-left: 7px;
+    display: flex;
+}
+
+.logo-container {
+    padding: 0;
+    margin: 0;
+}
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 490px;
+    height: auto;
+    width: 35%;
+    border-radius: 100%;
+    opacity: 0.6;
+}     
+    
