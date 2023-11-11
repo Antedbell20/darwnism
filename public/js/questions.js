@@ -2,17 +2,15 @@
 
 //  const answerButtonA = document.querySelector('#answerA');
 
-// const questionObjArray = JSON.parse(retrieveQuestionString);
+const questionObjArray = JSON.parse(retrieveQuestionString);
 
-
-
-// function rearrangeAnswers(array){
-// for (let i = array.length -1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i+1));
-//     [array[i],array[j]] = [array[j],array[i]];
-// }
-// return array;
-// }
+function rearrangeAnswers(array){
+for (let i = array.length -1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i+1));
+    [array[i],array[j]] = [array[j],array[i]];
+}
+return array;
+}
 
 // const template = Handlebars.compile(`<div class="container mt-5">
 // {{#each questionObjArray}}
@@ -38,20 +36,27 @@
 // const questionContainer = document.getElementById('questionContainer');
 // questionContainer.innerHTML = template(questionObjArray);
 
-// answerButtonA.addEventListener("click", async function(){
+answerButtonA.addEventListener("click", async function(){
 
-// if (questionObjArray) {
-//   const response = await fetch('/questionPage', {
-//     method: 'GET',
-//     body: JSON.stringify(questionObjArray),
-//     headers: {'Content-Type': 'application/json'},
-//   })
-//   if (response.ok) {
-//     document.location.replace('/questionPage')
-//   }
-// }
- 
+console.log(questionObjArray);
+// console.log(questionObjArray[0].question);
+// console.log(questionObjArray[0].correct_answer);
+// console.log(questionObjArray[0].incorrect_answers);
 
+    if(questionObjArray){
+        const res = await fetch('/questionPage',{
+            method: 'POST',
+            body: JSON.stringify(questionObjArray),
+            headers: {"Content-Type":"application.json"},
+        })
+        if(res.ok){
+            // console.log("working", questionObjArray);
+            // document.location.replace('/questionPage');
+        }else{
+            throw err;
+        }
+    }
+  });
     //  for (let i = 0; i < questionObjArray.length; i++) {
 
 
@@ -69,6 +74,4 @@
     //     console.log(shuffledAnswers);
         
     // }
-
-// });
-
+ 
