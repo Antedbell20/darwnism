@@ -21,11 +21,24 @@ startQuizBtn.addEventListener("click", function(){
     .then(function(res){
         return res.json();
     })
-    .then(function(data) {
+    .then(function (data) {
         questionObjArray.push(...data.results);
         let questionString = JSON.stringify(questionObjArray);
         localStorage.setItem("questionObjArray", questionString);
         document.location.replace('/questionPage');
+        if(questionObjArray){
+            const res = fetch('/questionPage',{
+                method: 'POST',
+                body: JSON.stringify(questionObjArray),
+                headers: {"Content-Type":"application.json"},
+            })
+            if(res.ok){
+                // console.log("working", questionObjArray);
+                // document.location.replace('/questionPage');
+            }else{
+                throw err;
+            }
+        }
     })
     .catch(function(err){
         console.log(err);

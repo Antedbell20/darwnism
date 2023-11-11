@@ -92,6 +92,19 @@ router.get('/questionPage', (req, res) => {
     }
 });
 
+router.post('/questionPage', (req, res) => {
+    try{
+        const questionObjArray = req.body.questionObjArray;
+
+        console.log(req.body.questionObjArray);
+        res.render('questionPage',{
+            questionObjArray
+        });
+    }catch(err){
+        res.status(500).json(err)
+    }
+});
+
 // export questionObjArray either from localstorage or directly from some file to then render it within questionPage for further use.
 
 module.exports = router;
