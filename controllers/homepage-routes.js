@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Animal, Score, User } = require('../models');
 const withAuth = require('../utils/auth');
-// const questionObjArray = require('../public/js/questions')
+const { questionObjArray }= require('../public/js/questions')
 // const questionObjArray = localStorage.getItem("questionObjArray");
 
 router.get('/', (req, res) => {
@@ -83,14 +83,17 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/questionPage', (req, res) => {
-    try{
+
+    // try{
         res.render('questionPage',{
-            // questionObjArray,
+         questionObjArray,
         });
-    }catch(err){
-        res.status(500).json(err)
-    }
+    // }catch(err){
+    //     res.status(500).json(err)
+    // }
 });
+
+
 
 // export questionObjArray either from localstorage or directly from some file to then render it within questionPage for further use.
 

@@ -23,6 +23,7 @@ startQuizBtn.addEventListener("click", function(){
     })
     .then(function(data) {
         questionObjArray.push(...data.results);
+        console.log(questionObjArray)
         let questionString = JSON.stringify(questionObjArray);
         localStorage.setItem("questionObjArray", questionString);
         document.location.replace('/questionPage');
