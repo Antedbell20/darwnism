@@ -6,7 +6,7 @@ const logout = async (event) => {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert('Failed to log out.');
     }
