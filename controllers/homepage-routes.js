@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Animal, Score, User } = require('../models');
 const withAuth = require('../utils/auth');
-// const questionObjArray = require('../public/js/questions')
-// const questionObjArray = localStorage.getItem("questionObjArray");
 
 router.get('/', (req, res) => {
     try{
@@ -94,11 +92,7 @@ router.get('/questionPage', (req, res) => {
 
 router.post('/questionPage', (req, res) => {
     try{
-        const questionObjArray = req.body.questionObjArray;
-
-        console.log(req.body.questionObjArray);
         res.render('questionPage',{
-            questionObjArray
         });
     }catch(err){
         res.status(500).json(err)
