@@ -54,23 +54,38 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 
-router.get('/finalScore', (req, res) => {
-    try{
-        res.render('finalScore');
-    }catch(err){
-        res.status(500).json(err)
-    }
+router.get('/finalScore', async (req, res) => {
+    // try{
+        const userData = await Score.findAll({
+            where:{
+                user_id: req.session.user_id
+            }
+        })
+        const score = (userData).map((score) => score.dataValues)
+        // console.log(user);
+        console.log(score)
+        res.render('finalScore', {
+             score
+        });
+        
+    // }catch(err){
+    //     res.status(500).json(err)
+    // }
 });
 
 router.get('/highScore', async (req, res) => {
     try{
-        const userData = await User.findAll({
-            where:{
-                id: req.session.id
-            }
+
+        const userData = await Score.findAll({
+            
         })
-        console.log(userData);
-        res.render('highScore');
+        const score = (userData).map((score) => score.dataValues)
+        // console.log(user);
+        console.log(score)
+      res.render('highScore', {
+        score
+      });
+
     }catch(err){
         res.status(500).json(err)
     }

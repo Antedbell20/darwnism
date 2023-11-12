@@ -12,14 +12,19 @@
     {{!-- Top Ranked Players --}}
     <div class="col-xs-6 col-md-4"><h2>Top Players</h2></div>
      {{!-- username, overall score, animal rank, and sml animal image for rank --}}
-     <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.rank}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
+     {{!-- <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.rank}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
     </div>
     <div class="row">
   {{!-- Highest Quiz Scores --}}
     <div class="col-xs-6 col-md-4"><h2>Highest quiz scores</h2></div>
    {{!-- username, quiz score, animal rank, and sml animal image for rank --}}
     <div class="col-xs-6 col-md-4"><h3>{{user.username}} {{user.score}} {{animal}} {{{determineRankImg user.rank}}}</h3></div>
+    </div> --}}
+    {{#each score}}
+    <div>
+      <p>{{score}}</p>
     </div>
+     {{/each}}
 </div>
  
   
