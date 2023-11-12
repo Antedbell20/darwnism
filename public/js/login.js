@@ -10,8 +10,12 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      
+       
       if (response.ok) {
+        const data = await response.json()
+        localStorage.setItem('user_id', data.user.id)
+
         console.log('You have logged in successfully!');
         document.location.replace('/dashboard');
       } else {
@@ -32,8 +36,11 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ username, password, rank: null }),
         headers: { 'Content-Type': 'application/json' },
       });
+      console.log
   
       if (response.ok) {
+        localStorage.setItem('user_id', response.id)
+        console.log(response)
         document.location.replace('/dashboard');
       } else {
         alert('Failed to sign up.');
