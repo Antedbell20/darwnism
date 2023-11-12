@@ -10,7 +10,7 @@
 <button><a href="/">Home</a></button>
 <div class="row">
 {{!-- Final Score is ?? --}}
-  <div class="col-xs-6 col-md-4"><h2>Your final Score is: {{score}}</h2></div>
+  <div class="col-xs-6 col-md-4"><h2>Your final Score is: <span id="score"></span></h2></div>
   {{!-- Display animal lvl and image --}}
   <div class="col-xs-6 col-md-4"><h2>Your animal is: {{animal}} {{{determineRankImg user.rank}}}</h2> </div>
 </div>
@@ -20,4 +20,4 @@
 <button>Retry</button>
 </div>
 
-
+<script src="/js/scores.js"></script>

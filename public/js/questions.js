@@ -1,6 +1,6 @@
-// const retrieveQuestionString = localStorage.getItem("questionObjArray");
+const retrieveQuestionString = localStorage.getItem("questionObjArray");
 
-//  const answerButtonA = document.querySelector('#answerA');
+const answerButtonA = document.querySelector('#answerA');
 
 const questionObjArray = JSON.parse(retrieveQuestionString);
 
@@ -56,7 +56,7 @@ console.log(questionObjArray);
             throw err;
         }
     }
-  });
+
     //  for (let i = 0; i < questionObjArray.length; i++) {
 
 
@@ -74,4 +74,5 @@ console.log(questionObjArray);
     //     console.log(shuffledAnswers);
         
     // }
- 
+
+});
