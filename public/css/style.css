@@ -15,11 +15,42 @@ body {
     
 }
 
+.logo-container {
+    padding: 0;
+    margin: 0;
+}
+.logo {
+    position: absolute;
+    z-index: -1;
+    left: 567px;
+    height: auto;
+    width: 25%;
+    border-radius: 100%;
+    opacity: 0.9;
+}
+
 .input {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.login-btn {
+.login {
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.card-container {
+    position: relative;
+    top: 75px; 
+
+}
+
+.card {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+    background-color: aliceblue;
+
+}
+
+.login-btn, .signup-btn{
     margin: 20px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     
@@ -45,23 +76,7 @@ body {
     background-color: #ddd;
     color: #000;
 }
-
-.logo-container {
-    padding: 0;
-    margin: 0;
-}
-.logo {
-    position: absolute;
-    z-index: -1;
-    left: 567px;
-    height: auto;
-    width: 25%;
-    border-radius: 100%;
-    opacity: 0.8;
-}
-
-
-   
+ 
 .homepage-btns {
     position: absolute;
     top: 350px;
@@ -78,3 +93,16 @@ body {
     left: 37px;
     top: 10px;
 }
+
+.dashboard{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 20px;
+}
+
+#startQuizBtn{
+    padding: 20px;
+    max-height: 30%;
+}
+

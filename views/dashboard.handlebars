@@ -8,35 +8,30 @@
 
 
 {{!-- I will add a high score and logout button to dashboard-Andrew --}}
-<div class= "container">
-<div class="back-btn">
-  <a
-    class="btn btn-outline-secondary btn-sm active"
-    href="/"
-    role="button"
-    id="logout"
-  >Back</a>
-</div>
-{{!-- Image of their rank(animal) --}}
-<div class="row">
-<div class="col">
-<div class="container text-center mt-5 p-5">
-<div class="card">
-<h1>
-Welcome: {{user.username}}
-</h1>
-<h2>
-You are rank: {{determineRank user.rank}}
-</h2>
-{{{determineRankImg user.rank}}}
-</div>
-{{!-- Previous Scores (User) --}}
-{{#each score}}
-{{>scoreblock}}
-{{/each}}
-</div>
-</div>
-{{!-- ----------------------------------------------------- --}}
+
+  <div class="back-btn">
+    <a class="btn btn-outline-secondary btn-sm active" href="/" role="button" id="logout">Back</a>
+  </div>
+  {{!-- Image of their rank(animal) --}}
+  <div class="dashboard row">
+    <div class="col-sm-3 d-flex">
+      <div class="card flex-grow-1">
+        <div class="card body d-felx flex-column">
+          <h1>
+            Welcome: {{user.username}}
+          </h1>
+          <h2>
+            You are rank: {{determineRank user.rank}}
+          </h2>
+          {{{determineRankImg user.rank}}}
+        </div>
+        {{!-- Previous Scores (User) --}}
+        {{#each score}}
+        {{>scoreblock}}
+        {{/each}}
+      </div>
+    </div>
+    {{!-- ----------------------------------------------------- --}}
 
 {{!-- Quiz Selector (Card)--}}
 <div class="col mt-5">
@@ -76,21 +71,22 @@ You are rank: {{determineRank user.rank}}
   <option value="32">Entertainment: Cartoon And Animations</option>
 </select>
 
-<select id="quizDifficulty" class="form-select form-select-lg mb-3" aria-label="Large select example">
-  <option selected>Select The Difficulty Of Your Quiz </option>
-  <option>Easy</option>
-  <option>Medium</option>
-  <option>Hard</option>
-</select>
+            <select id="quizDifficulty" class="form-select form-select-lg mb-3" aria-label="Large select example">
+              <option selected>Select The Difficulty Of Your Quiz </option>
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
 
-<button id="startQuizBtn" type="button" class="btn btn-primary btn-lg">Start Quiz!</button>
-</div>
-</div>
-</div>
-</div>
-<script src="/js/dashboard.js"></script>
-</div>
-{{!-- Select Quiz Topic  --}}
+            <button id="startQuizBtn" type="button" class="btn btn-primary btn-lg">Start Quiz!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/dashboard.js"></script>
+
+{{!-- Select Quiz Topic --}}
 
 {{!-- Select # of Questions --}}
 
