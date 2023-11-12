@@ -1,5 +1,4 @@
 const topicSelection = document.querySelector('#quizTopic');
-const quizLengthSelection = document.querySelector('#quizLength');
 const DifficultySelection = document.querySelector('#quizDifficulty');
 const startQuizBtn = document.querySelector('#startQuizBtn');
 
@@ -12,10 +11,9 @@ const questionObjArray=[];
 startQuizBtn.addEventListener("click", function(){
 
     const topic = topicSelection.value;
-    const quizLength = quizLengthSelection.value;
     const difficulty = DifficultySelection.value;
 
-    const url = `https://opentdb.com/api.php?amount=${quizLength}&category=${topic}&difficulty=${difficulty.toLowerCase()}&type=multiple`;
+    const url = `https://opentdb.com/api.php?amount=10&category=${topic}&difficulty=${difficulty.toLowerCase()}&type=multiple`;
 
     fetch(url)
     .then(function(res){
@@ -25,6 +23,7 @@ startQuizBtn.addEventListener("click", function(){
         questionObjArray.push(...data.results);
         let questionString = JSON.stringify(questionObjArray);
         localStorage.setItem("questionObjArray", questionString);
+        localStorage.setItem("difficultySelection", difficulty);
         document.location.replace('/questionPage');
         if(questionObjArray){
             const res = fetch('/questionPage',{

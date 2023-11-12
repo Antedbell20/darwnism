@@ -1,10 +1,18 @@
-let score = 
+// let score = 
 
-function incrementScore(){
+// function incrementScore(){
     
-}
+// }
 
-const updateScore = await fetch('/api/scores/:id', {
-    method: 'PUT',
+// const updateScore = await fetch('/api/scores/:id', {
+//     method: 'PUT',
 
-})
+// })
+
+const score = localStorage.getItem("score")
+
+function displayQuizScore(){
+    document.querySelector("#score").textContent = score;
+};
+
+displayQuizScore();

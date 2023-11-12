@@ -7,31 +7,15 @@
 <div class="container">
 <div class="card text-center">
   <div class="card-header">
-    question
+    <h1 id="questionBlock"></h1>
   </div>
-  <div class="card-body">
-    <p>answer[0]</p><a id="answerA" class="btn btn-primary">A</a>
-    <p>answer[1]</p><a id="answerB" class="btn btn-primary">B</a>
-    <p>answer[2]</p><a id="answerC" class="btn btn-primary">C</a>
-    <p>answer[3]</p><a id="answerD" class="btn btn-primary">D</a>
-  </div>
-</div>
-{{#each questionObjArray}}
-<div class="container">
-<div class="card text-center">
-  <div class="card-header">
-    {{question}}
-  </div>
-  <div class="card-body">
-    <p>{{correct_answer}}</p><a id="answerA" class="btn btn-primary">A</a>
-    {{!-- <p>{{incorrect_answer}}</p><a id="answerB" class="btn btn-primary">B</a>
-    <p>{{incorrect_answer}}</p><a id="answerC" class="btn btn-primary">C</a>
-    <p>{{incorrect_answer}}</p><a id="answerD" class="btn btn-primary">D</a> --}}
-    <h1>Hello!</h1>
+  <div id="answerBlock" class="card-body">
+    <p id="answerAText"></p><a id="answerA" class="btn btn-primary">A</a>
+    <p id="answerBText"></p><a id="answerB" class="btn btn-primary">B</a>
+    <p id="answerCText"></p><a id="answerC" class="btn btn-primary">C</a>
+    <p id="answerDText"></p><a id="answerD" class="btn btn-primary">D</a>
   </div>
 </div>
-</div>
-{{/each}}
 </div>
 </div>
 <script src="/js/questions.js"></script>
