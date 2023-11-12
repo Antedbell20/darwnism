@@ -62,8 +62,14 @@ router.get('/finalScore', (req, res) => {
     }
 });
 
-router.get('/highScore', (req, res) => {
+router.get('/highScore', async (req, res) => {
     try{
+        const userData = await User.findAll({
+            where:{
+                id: req.session.id
+            }
+        })
+        console.log(userData);
         res.render('highScore');
     }catch(err){
         res.status(500).json(err)
