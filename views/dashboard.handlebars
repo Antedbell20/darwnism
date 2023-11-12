@@ -33,49 +33,43 @@
     </div>
     {{!-- ----------------------------------------------------- --}}
 
-    {{!-- Quiz Selector (Card)--}}
-    <div class="col-sm-3 d-flex">
-      <div class="card flex-grow-1">
-        <div class="card body d-felx flex-column">
-          <h2 class="card-title">Take A Quiz!</h2>
-          <div class="card-body">
-            <select id="quizTopic" class="form-select form-select-lg mb-3" aria-label="Large select example">
-              <option selected>Select Your Quiz Topic</option>
-              <option value="27">Animals</option>
-              <option value="9">General Knowledge</option>
-              <option value="10">Entertainment: Books</option>
-              <option value="11">Entertainment: Film</option>
-              <option value="12">Entertainment: Music</option>
-              <option value="13">Entertainment: Musicals and Theatre</option>
-              <option value="14">Entertainment: Television</option>
-              <option value="15">Entertainment: Video Games</option>
-              <option value="16">Entertainment: Board Games</option>
-              <option value="17">Science and Nature</option>
-              <option value="18">Computer Science</option>
-              <option value="19">Mathematics</option>
-              <option value="20">Mythology</option>
-              <option value="21">Sports</option>
-              <option value="22">Geography</option>
-              <option value="23">History</option>
-              <option value="24">Politics</option>
-              <option value="25">Art</option>
-              <option value="26">Celebrities</option>
-              <option value="28">Vehicles</option>
-              <option value="29">Entertainment: Comics</option>
-              <option value="30">Science: Gadgets</option>
-              <option value="31">Entertainment: Japanese Anime And Manga</option>
-              <option value="32">Entertainment: Cartoon And Animations</option>
-            </select>
-
-            <select id="quizLength" class="form-select form-select-lg mb-3" aria-label="Large select example">
-              <option selected>Select The Number Of Questions You Want In Your Quiz</option>
-              <option>5</option>
-              <option>10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option>30</option>
-            </select>
+{{!-- Quiz Selector (Card)--}}
+<div class="col mt-5">
+<div class="container card mt-5 p-5">
+<div class="card-title text-center">
+<h2 class="card-title">Take A Quiz!</h2>
+</div>
+<div class="card-body">
+<select id="quizTopic" class="form-select form-select-lg mb-3" aria-label="Large select example">
+  <option selected>Select Your Quiz Topic</option>
+  <option value="27">Animals</option>
+  <option value="9">General Knowledge</option>
+  <option value="10">Entertainment: Books</option>
+  <option value="11">Entertainment: Film</option>
+  <option value="12">Entertainment: Music</option>
+  <option value="13">Entertainment: Musicals and Theatre (medium diff only)</option>
+  {{!-- medium only works for the one above --}}
+  <option value="14">Entertainment: Television</option>
+  <option value="15">Entertainment: Video Games</option>
+  <option value="16">Entertainment: Board Games</option>
+  <option value="17">Science and Nature</option>
+  <option value="18">Computer Science</option>
+  <option value="19">Mathematics</option>
+  <option value="20">Mythology</option>
+  <option value="21">Sports</option>
+  <option value="22">Geography</option>
+  <option value="23">History</option>
+  <option value="24">Politics (medium/hard diff only)</option>
+  {{!-- <option value="25">Art</option> --}}
+  {{!-- api routes dont work --}}
+  <option value="26">Celebrities</option>
+  <option value="28">Vehicles</option>
+  <option value="29">Entertainment: Comics</option>
+  {{!-- <option value="30">Science: Gadgets</option> --}}
+   {{!-- api routes dont work --}}
+  <option value="31">Entertainment: Japanese Anime And Manga</option>
+  <option value="32">Entertainment: Cartoon And Animations</option>
+</select>
 
             <select id="quizDifficulty" class="form-select form-select-lg mb-3" aria-label="Large select example">
               <option selected>Select The Difficulty Of Your Quiz </option>
