@@ -29,8 +29,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
                     //     scores: [],
                     //     animal: { name: 'Rat' }
                     //   }
-
-
                     model: Score,
                     attributes: ['score'], 
                 },
@@ -82,28 +80,8 @@ router.get('/login', (req, res) => {
 
 router.get('/questionPage', (req, res) => {
 
-    // try{
-        res.render('questionPage',{
-        //  questionObjArray,
-        });
-    // }catch(err){
-    //     res.status(500).json(err)
-    // }
+        res.render('questionPage');
+
 });
-
-router.post('/questionPage', (req, res) => {
-    try{
-        res.render('questionPage',{
-        });
-    }catch(err){
-        res.status(500).json(err)
-    }
-});
-
-
-
-
-
-// export questionObjArray either from localstorage or directly from some file to then render it within questionPage for further use.
 
 module.exports = router;
