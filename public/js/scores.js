@@ -1,14 +1,3 @@
-// let score = 
-
-// function incrementScore(){
-    
-// }
-
-// const updateScore = await fetch('/api/scores/:id', {
-//     method: 'PUT',
-
-// })
-
 const score = localStorage.getItem("score")
 
 function displayQuizScore(){
@@ -16,3 +5,19 @@ function displayQuizScore(){
 };
 
 displayQuizScore();
+
+
+// if (score) {
+//     const response = await fetch('/api/score/:id', {
+//       method: 'POST',
+//       body: JSON.stringify({ score }),
+//       headers: { 'Content-Type': 'application/json' },
+//     });
+
+//     if (response.ok) {
+//       console.log('You have logged in successfully!');
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to log in.');
+//     }
+//   };

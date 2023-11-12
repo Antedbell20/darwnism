@@ -21,6 +21,8 @@ startQuizBtn.addEventListener("click", function(){
     })
     .then(function (data) {
         questionObjArray.push(...data.results);
+        // for each over results 
+        console.log(questionObjArray)
         let questionString = JSON.stringify(questionObjArray);
         localStorage.setItem("questionObjArray", questionString);
         localStorage.setItem("difficultySelection", difficulty);
