@@ -75,6 +75,7 @@ router.get('/finalScore', async (req, res) => {
 
 router.get('/highScore', async (req, res) => {
     try{
+
         const userData = await Score.findAll({
             
         })
@@ -84,6 +85,7 @@ router.get('/highScore', async (req, res) => {
       res.render('highScore', {
         score
       });
+
     }catch(err){
         res.status(500).json(err)
     }
