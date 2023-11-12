@@ -1,11 +1,6 @@
 const router = require('express').Router();
 const { Animal, Score, User } = require('../models');
 const withAuth = require('../utils/auth');
-<<<<<<< HEAD
-const { questionObjArray }= require('../public/js/questions')
-// const questionObjArray = localStorage.getItem("questionObjArray");
-=======
->>>>>>> 8fd8002204ddd42ec69578257ec54339a142433b
 
 router.get('/', (req, res) => {
     try{
