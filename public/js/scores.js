@@ -7,18 +7,17 @@ function displayQuizScore(){
 displayQuizScore();
 
 
-if (score) {
-    const response = await fetch('/api/score/:id', {
-      method: 'POST',
-      body: JSON.stringify({ score }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+// if (score) {
+//     const response = await fetch('/api/score/:id', {
+//       method: 'POST',
+//       body: JSON.stringify({ score }),
+//       headers: { 'Content-Type': 'application/json' },
+//     });
 
-    if (response.ok) {
-      console.log('You have logged in successfully!');
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to log in.');
-    }
-  }
-};
+//     if (response.ok) {
+//       console.log('You have logged in successfully!');
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to log in.');
+//     }
+//   };

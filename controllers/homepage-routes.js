@@ -84,7 +84,7 @@ router.get('/questionPage', (req, res) => {
 
     // try{
         res.render('questionPage',{
-         questionObjArray,
+        //  questionObjArray,
         });
     // }catch(err){
     //     res.status(500).json(err)
