@@ -23,6 +23,7 @@ startQuizBtn.addEventListener("click", function(){
         questionObjArray.push(...data.results);
         let questionString = JSON.stringify(questionObjArray);
         localStorage.setItem("questionObjArray", questionString);
+        localStorage.setItem("difficultySelection", difficulty);
         document.location.replace('/questionPage');
         if(questionObjArray){
             const res = fetch('/questionPage',{
