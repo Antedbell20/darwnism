@@ -3,7 +3,7 @@
 </div>
 <div class="d-grid gap-2 col-3 mx-auto homepage-btns">
   {{#if logged_in}}
-  <a href="/dashboard" class="btn btn-primary">Home</a>
+  <a href="/dashboard" class="btn btn-primary" id="home">Home</a>
   <a href="/" class="btn btn-primary" id="logout">Logout</a>
   {{else}}
   <a href="/login" class="btn btn-primary">Log In!</a>
@@ -15,4 +15,3 @@
 <script src="/js/logout.js"></script>
 {{/if}}
 
-{{!-- i will add a link to the dashboard from the homepage when the user is logged in-Andrew --}}

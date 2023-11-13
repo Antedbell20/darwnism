@@ -23,12 +23,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 },
             ],
         });
-
+        
         const user = userData.get({ plain: true });
-
-
+        const limitedArray = userData.scores.slice(0,10)
+        const sortedLimitedArray = limitedArray.sort((a,b)=> b.score - a.score)
+        const topPlayerScores = (sortedLimitedArray).map((score) => score.score)
+        
         res.render('dashboard', { 
             user, 
+            topPlayerScores,
             logged_in: req.session.logged_in
         });
 
@@ -46,9 +49,11 @@ router.get('/finalScore', async (req, res) => {
             }
         })
         const score = (scoreData).map((score) => score.dataValues)
-
+        const limitedScoreArray = score.slice(0,10);
+        const sortedLimitedScoresArray = limitedScoreArray.sort((a,b)=> b.score - a.score);
         res.render('finalScore', {
-             score
+            score,
+             sortedLimitedScoresArray
         });
 });
 
@@ -59,9 +64,11 @@ router.get('/highScore', async (req, res) => {
             
         })
         const score = (userData).map((score) => score.dataValues)
-
+        const limitedScoreArray = score.slice(0,50);
+        const sortedLimitedScoresArray = limitedScoreArray.sort((a,b)=> b.score - a.score);
       res.render('highScore', {
-        score
+        score,
+        sortedLimitedScoresArray
       });
 
     }catch(err){

@@ -10,7 +10,7 @@
 {{!-- I will add a high score and logout button to dashboard-Andrew --}}
 
   <div class="back-btn">
-    <a class="btn btn-outline-primary btn-sm active" href="/" role="button" id="logout">Back</a>
+    <a class="btn btn-primary" href="/" role="button" id="logout">Back</a>
   </div>
   {{!-- Image of their rank(animal) --}}
   <div class="dashboard row">
@@ -26,8 +26,8 @@
           {{{determineRankImg user.scores}}}
         </div>
         {{!-- Previous Scores (User) --}}
-        {{#each score}}
-        {{>scoreblock}}
+        {{#each topPlayerScores}}
+        {{this}}
         {{/each}}
       </div>
     </div>
