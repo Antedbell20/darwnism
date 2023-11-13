@@ -46,9 +46,10 @@ router.get('/finalScore', async (req, res) => {
             }
         })
         const score = (scoreData).map((score) => score.dataValues)
-
+        const limitedScoreArray = score.slice(0,10);
         res.render('finalScore', {
-             score
+            score,
+             limitedScoreArray
         });
 });
 

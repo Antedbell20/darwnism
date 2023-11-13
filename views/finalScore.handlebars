@@ -1,21 +1,37 @@
 {{!-- Home Button (Dashboard) --}}
-<div id="intro" class="bg-image col-xs-12">
-<a href="/dashboard" class="btn btn-primary">Home</a>
-<div class="row">
-{{!-- Final Score is ?? --}}
-  <div class="col-xs-6 col-md-4"><h2>Your final Score Is: <span id="score"></span></h2></div>
-  {{!-- Display animal lvl and image --}} 
-  <div class="col-xs-6 col-md-4"><h2>Your Animal Rank Is: {{determineRank score}}</h2></div>
-  <div class="col-xs-6 col-md-4">{{{determineRankImg score}}}</div>
-</div>
-{{#each score}}
-<div>
-  <h2>{{score}}</h2>
-</div>
-{{/each}}
-
 {{!-- Retry Button (takes in same api key to restart same quiz) --}}
+
+<div id="intro">
+<a href="/dashboard" class="btn btn-primary">Home</a>
 <a href="/questionPage" class="btn btn-primary">Retry</a>
+</div>
+
+<div class="container text-center">
+
+<div class="row">
+  
+{{!-- Final Score is ?? --}}
+
+<div class="card col m-5" style="width: 40%; height:300px;">
+<div><h2>Your final Score Is: <span id="score"></span></h2></div>
+
+  {{!-- Display animal lvl and image --}} 
+
+<div><h2>Your Animal Rank Is: {{determineRank score}}</h2></div>
+<div>{{{determineRankImg score}}}</div>
+</div>
+
+<div class="card col m-5" style="width: 40%;">
+<h2>Player Score History:</h2>
+<ul class="list-group list-group-flush">
+{{#each limitedScoreArray}}
+  
+    <li class="list-group-item">{{this.score}}</li>
+  
+{{/each}}
+</ul>
+</div>
+
 </div>
 
 <script src="/js/scores.js"></script>
