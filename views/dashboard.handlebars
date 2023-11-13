@@ -26,8 +26,8 @@
           {{{determineRankImg user.scores}}}
         </div>
         {{!-- Previous Scores (User) --}}
-        {{#each user.scores}}
-        {{>scoreblock}}
+        {{#each topPlayerScores}}
+        {{this}}
         {{/each}}
       </div>
     </div>
