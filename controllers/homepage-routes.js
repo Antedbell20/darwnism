@@ -54,12 +54,26 @@ router.get('/finalScore', async (req, res) => {
 
 router.get('/highScore', async (req, res) => {
     try{
+<<<<<<< HEAD
         const scoreData = await Score.findAll({})
         const score = (scoreData).map((score) => score.dataValues)
 
       res.render('highScore', {
         score
       });
+=======
+
+        const userData = await Score.findAll({
+            
+        })
+        const score = (userData).map((score) => score.dataValues)
+        // console.log(user);
+        console.log(score)
+      res.render('highScore', {
+        score
+      });
+
+>>>>>>> 57373df6c17cbf28c35a5d19996ebd60c92104a9
     }catch(err){
         res.status(500).json(err)
     }
