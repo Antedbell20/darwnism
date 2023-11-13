@@ -16,7 +16,7 @@ module.exports = {
         else if(totalScore <= 1500){
             return `<img src="/images/Pig.jpeg"></img>`;
         }
-        else if(totalScore <= 2000){
+        else{
             return `<img src="/images/Dolphin.jpeg"></img>`;
         }
         
@@ -38,9 +38,9 @@ module.exports = {
         else if(totalScore <= 1500){
             return `Pig`;
         }
-        else if(totalScore <= 2000){
+        else {
             return `Dolphin`;
         }
         
-    },
+    }
     };
