@@ -17,39 +17,6 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Get all users
-router.get('/', async (req, res) => {
-    try {
-        const userData = await User.findAll({
-            include: [
-                {
-                    model: Animal,
-                    attributes: ['name']
-                }
-            ]
-        });
-        res.status(200).json(userData);
-    } catch (error) {
-        res.status(400).json(error);
-    }
-});
-
-// update user rank
-
-router.put('/:id', async (req, res) => {
-    try {
-        const userData = await User.update(req.body, {
-            where: {
-                id: req.params.id,
-            },
-        });
-        res.status(200).json(userData);
-    } catch (error) {
-        res.status(400).json(error);
-
-    }
-});
-
 // login user
  router.post('/login', async (req, res) => {
     try {
