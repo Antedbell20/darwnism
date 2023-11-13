@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Animal, Score } = require('../../models');
+const { User } = require('../../models');
 
 // Create a new user
 router.post('/', async (req, res) => {
@@ -9,11 +9,11 @@ router.post('/', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             res.status(200).json(userData);
-            console.log(userData)
+
         });
     } catch (error) {
         res.status(400).json(error);
-        console.log(error);
+
     }
 });
 
@@ -46,7 +46,7 @@ router.put('/:id', async (req, res) => {
         res.status(200).json(userData);
     } catch (error) {
         res.status(400).json(error);
-        console.log(error);
+
     }
 });
 
@@ -75,7 +75,7 @@ router.put('/:id', async (req, res) => {
         req.session.logged_in = true;
         
         res.json({ user: userData, message: 'You are now logged in!' });
-        console.log(req.session);
+
       });
   
     } catch (err) {
