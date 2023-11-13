@@ -59,8 +59,7 @@ router.get('/highScore', async (req, res) => {
             
         })
         const score = (userData).map((score) => score.dataValues)
-        // console.log(user);
-        console.log(score)
+
       res.render('highScore', {
         score
       });
