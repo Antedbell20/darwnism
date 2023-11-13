@@ -45,9 +45,19 @@ body {
 
 }
 
+.card-image{
+    width: 600px;
+    
+}
+
 .card {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
     background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.card-backround{
+    opacity: 95%;
 
 }
 
