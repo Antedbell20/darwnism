@@ -14,6 +14,7 @@ const loginFormHandler = async (event) => {
        
       if (response.ok) {
         const data = await response.json()
+        console.log(data)
         localStorage.setItem('user_id', data.user.id)
 
         console.log('You have logged in successfully!');
@@ -39,8 +40,8 @@ const loginFormHandler = async (event) => {
       console.log
   
       if (response.ok) {
-        localStorage.setItem('user_id', response.id)
-        console.log(response)
+        const data = await response.json()
+        localStorage.setItem('user_id', data.id)
         document.location.replace('/dashboard');
       } else {
         alert('Failed to sign up.');

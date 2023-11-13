@@ -21,8 +21,7 @@ startQuizBtn.addEventListener("click", function(){
         return res.json();
     })
     .then(function (data) {
-        questionObjArray.push(...data.results);
-        // for each over results 
+        questionObjArray.push(...data.results); 
         console.log(questionObjArray)
         let questionString = JSON.stringify(questionObjArray);
         localStorage.setItem("questionObjArray", questionString);
