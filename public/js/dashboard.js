@@ -14,9 +14,10 @@ startQuizBtn.addEventListener("click", function(){
     const difficulty = DifficultySelection.value;
 
     const url = `https://opentdb.com/api.php?amount=10&category=${topic}&difficulty=${difficulty.toLowerCase()}&type=multiple`;
-
+    
     fetch(url)
     .then(function(res){
+        console.log(res)
         return res.json();
     })
     .then(function (data) {
@@ -27,19 +28,6 @@ startQuizBtn.addEventListener("click", function(){
         localStorage.setItem("questionObjArray", questionString);
         localStorage.setItem("difficultySelection", difficulty);
         document.location.replace('/questionPage');
-        if(questionObjArray){
-            const res = fetch('/questionPage',{
-                method: 'POST',
-                body: JSON.stringify(questionObjArray),
-                headers: {"Content-Type":"application.json"},
-            })
-            if(res.ok){
-                // console.log("working", questionObjArray);
-                // document.location.replace('/questionPage');
-            }else{
-                throw err;
-            }
-        }
     })
     .catch(function(err){
         console.log(err);
