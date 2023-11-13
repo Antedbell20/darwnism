@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Animal, Score, User } = require('../models');
+const { Score, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -18,30 +18,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
             where: { id: req.session.user_id },
             include: [
                 {
-                    // will need to refactor this possible to have score and animal in the same table?
-                    // or link animal to score or score to animal
-                    // this is the data we get back from the query
-                    // {
-                    //     id: 8,
-                    //     username: 'sam',
-                    //     password: '$2b$10$B//J6gWAAjBG9CE3jntv1.VZ5AbX5ejAa/nocxgRPRv2k6noyni.S',
-                    //     rank: 3,
-                    //     scores: [],
-                    //     animal: { name: 'Rat' }
-                    //   }
                     model: Score,
                     attributes: ['score'], 
-                },
-                {
-                    model: Animal,
-                    as: 'animal', 
-                    attributes: ['name'], 
                 },
             ],
         });
 
         const user = userData.get({ plain: true });
-        console.log(user);
+
 
         res.render('dashboard', { 
             user, 
@@ -54,23 +38,28 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 
-router.get('/finalScore', (req, res) => {
-    try{
-        res.render('finalScore');
-    }catch(err){
-        res.status(500).json(err)
-    }
+router.get('/finalScore', async (req, res) => {
+
+        const scoreData = await Score.findAll({
+            where:{
+                user_id: req.session.user_id
+            }
+        })
+        const score = (scoreData).map((score) => score.dataValues)
+
+        res.render('finalScore', {
+             score
+        });
 });
 
 router.get('/highScore', async (req, res) => {
     try{
-        const userData = await User.findAll({
-            where:{
-                id: req.session.id
-            }
-        })
-        console.log(userData);
-        res.render('highScore');
+        const scoreData = await Score.findAll({})
+        const score = (scoreData).map((score) => score.dataValues)
+
+      res.render('highScore', {
+        score
+      });
     }catch(err){
         res.status(500).json(err)
     }
@@ -85,9 +74,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/questionPage', (req, res) => {
-
         res.render('questionPage');
-
 });
 
 module.exports = router;

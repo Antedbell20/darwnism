@@ -10,7 +10,7 @@
 {{!-- I will add a high score and logout button to dashboard-Andrew --}}
 
   <div class="back-btn">
-    <a class="btn btn-outline-secondary btn-sm active" href="/" role="button" id="logout">Back</a>
+    <a class="btn btn-outline-primary btn-sm active" href="/" role="button" id="logout">Back</a>
   </div>
   {{!-- Image of their rank(animal) --}}
   <div class="dashboard row">
@@ -21,9 +21,9 @@
             Welcome: {{user.username}}
           </h1>
           <h2>
-            You are rank: {{determineRank user.rank}}
+            You are rank: {{determineRank user.scores}}
           </h2>
-          {{{determineRankImg user.rank}}}
+          {{{determineRankImg user.scores}}}
         </div>
         {{!-- Previous Scores (User) --}}
         {{#each score}}
@@ -31,8 +31,6 @@
         {{/each}}
       </div>
     </div>
-    {{!-- ----------------------------------------------------- --}}
-
 {{!-- Quiz Selector (Card)--}}
 <div class="col mt-5">
 <div class="container card mt-5 p-5">
@@ -70,7 +68,6 @@
   <option value="31">Entertainment: Japanese Anime And Manga</option>
   <option value="32">Entertainment: Cartoon And Animations</option>
 </select>
-
             <select id="quizDifficulty" class="form-select form-select-lg mb-3" aria-label="Large select example">
               <option selected>Select The Difficulty Of Your Quiz </option>
               <option>Easy</option>
@@ -85,11 +82,3 @@
     </div>
   </div>
   <script src="/js/dashboard.js"></script>
-
-{{!-- Select Quiz Topic --}}
-
-{{!-- Select # of Questions --}}
-
-{{!-- Select Difficulty --}}
-
-{{!-- Start Quiz Button --}}

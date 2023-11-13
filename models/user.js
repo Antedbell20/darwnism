@@ -30,16 +30,6 @@ User.init({
     },
 
   },
-  rank: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    references: 
-    {
-      model: 'animal',
-      key: 'id',
-    },
-
-  },
 },
 {
     hooks: 
