@@ -26,13 +26,18 @@
           {{{determineRankImg user.scores}}}
         </div>
         {{!-- Previous Scores (User) --}}
-        {{#each topPlayerScores}}
-        {{this}}
-        {{/each}}
+        
       </div>
     </div>
 {{!-- Quiz Selector (Card)--}}
 <div class="col sm-4">
+  <div class="card">
+        <ul class="list-group list-group-flush">
+        {{#each topPlayerScores}}
+        <li class="list-group-item">{{this}}</li>
+        {{/each}}
+        </ul>
+  </div>
 <div class="container card mt-5 p-5 ">
 <div class="card-title text-center">
 <h2 class="card-title">Take A Quiz!</h2>
