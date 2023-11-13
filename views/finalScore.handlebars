@@ -1,19 +1,12 @@
-{{!-- <style>
-  #intro {
-        background-image: url("/images/logo.PNG");
-        height: 115vh;
-        width: 140vh;
-      }
-      </style> --}}
 {{!-- Home Button (Dashboard) --}}
 <div id="intro" class="bg-image col-xs-12">
 <a href="/dashboard" class="btn btn-primary">Home</a>
 <div class="row">
 {{!-- Final Score is ?? --}}
-  <div class="col-xs-6 col-md-4"><h2>Your final Score is:   <span id="score"></span></h2></div>
-  {{!-- Display animal lvl and image --}}
-  {{!-- <div class="col-xs-6 col-md-4"><h2>Your animal is: {{determineRank user.rank}} {{{determineRankImg user.rank}}}</h2> </div> --}}
-  
+  <div class="col-xs-6 col-md-4"><h2>Your final Score Is: <span id="score"></span></h2></div>
+  {{!-- Display animal lvl and image --}} 
+  <div class="col-xs-6 col-md-4"><h2>Your Animal Rank Is: {{determineRank score}}</h2></div>
+  <div class="col-xs-6 col-md-4">{{{determineRankImg score}}}</div>
 </div>
 {{#each score}}
 <div>

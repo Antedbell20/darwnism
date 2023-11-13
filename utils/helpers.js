@@ -1,36 +1,46 @@
 module.exports = {
-    determineRankImg: (rank) =>{
-        if(rank <= 100){
+    determineRankImg: (scoreArray) =>{
+        let totalScore = 0;
+        for (let i = 0; i < scoreArray.length; i++) {
+            totalScore = totalScore + scoreArray[i].score;
+        }
+        if(totalScore <= 100){
             return `<img src="/images/Goldfish.jpeg"></img>`;
         }
-        else if(rank <= 500){
+        else if(totalScore <= 500){
             return `<img src="/images/HouseCat.jpeg"></img>`;
         }
-        else if(rank <= 1000 ){
+        else if(totalScore <= 1000 ){
             return `<img src="/images/Rat.jpeg"></img>`;
         }
-        else if(rank <= 1500){
+        else if(totalScore <= 1500){
             return `<img src="/images/Pig.jpeg"></img>`;
         }
-        else if(rank <= 2000){
+        else if(totalScore <= 2000){
             return `<img src="/images/Dolphin.jpeg"></img>`;
         }
+        
     },
-    determineRank: (rank) => {
-        if(rank <= 100){
-            return "Goldfish";
+    determineRank: (scoreArray) => {
+        let totalScore = 0;
+        for (let i = 0; i < scoreArray.length; i++) {
+            totalScore = totalScore + scoreArray[i].score;
         }
-        else if(rank <= 500){
-            return "House Cat";
+        if(totalScore <= 100){
+            return `Goldfish`;
         }
-        else if(rank <= 1000 ){
-            return "Rat";
+        else if(totalScore <= 500){
+            return `House Cat`;
         }
-        else if(rank <= 1500){
-            return "Pig";
+        else if(totalScore <= 1000 ){
+            return `Rat`;
         }
-        else if(rank <= 2000){
-            return "Dolphin";
+        else if(totalScore <= 1500){
+            return `Pig`;
         }
-    }
-};
+        else if(totalScore <= 2000){
+            return `Dolphin`;
+        }
+        
+    },
+    };
