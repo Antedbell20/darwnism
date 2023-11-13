@@ -12,6 +12,7 @@ body {
     background-size: cover;
     background-position: absolute;
     background-repeat: no-repeat;
+    font-family: "Papyrus", "Comic Sans MS", cursive;
     
 }
 
@@ -50,17 +51,31 @@ body {
 
 }
 
+.btn {
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    background-color: rgb(238, 247, 255);
+    color: black;
+}
+
+.btn:active {
+    transform: scale(1.035);
+  }
+
+.btn:hover {
+    color: #fff;
+    filter: blur(.40px);
+    box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
 .login-btn, .signup-btn{
     margin: 20px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     
 }
 
-.logout-btn {
-    margin-top: 10px;
-    margin-left: 7px;
-    display: flex;
-}
 .back-btn, .hs-btn {
     margin-top: 10px;
     margin-left: 7px;
@@ -72,21 +87,17 @@ body {
     width: 100%;
 }
 
-.hs-btn button:hover {
-    background-color: #ddd;
-    color: #000;
-}
  
 .homepage-btns {
     position: absolute;
     top: 350px;
-    left: 605px;
-    width: 20%;
+    left: 640px;
+    width: 15%;
     height: 15%;
     align-items: center;
 }
 
-.homepage-btns #logout {
+.homepage-btns #logout #home {
     position: absolute;
     max-height: 44%;
     width: 75%;
@@ -94,18 +105,15 @@ body {
     top: 10px;
 }
 
+#startQuizBtn{
+    padding: 20px;
+    max-height: 30%;
+}
+
 .dashboard{
     display: flex;
     justify-content: space-around;
     margin: 0;
     padding: 20px;
-}
-
-#startQuizBtn{
-    padding: 20px;
-    max-height: 30%;
-}
-body {
-    font-family: "Papyrus", "Comic Sans MS", cursive;
 }
 
