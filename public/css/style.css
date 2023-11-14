@@ -114,6 +114,10 @@ body {
     left: 37px;
     top: 10px;
 }
+.miniRankPic{
+    width:5%;
+    height:5%;
+}
 
 #startQuizBtn{
     padding: 20px;

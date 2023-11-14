@@ -16,7 +16,7 @@
   <div class="dashboard row">
     <div class="col-sm-6 d-flex justify-content-evenly">
       <div class="card card-image flex-grow-4">
-        <div class="card body d-felx flex-column">
+        <div class="card body d-felx flex-column text-center">
           <h1>
             Welcome: {{user.username}}
           </h1>
@@ -32,6 +32,7 @@
 {{!-- Quiz Selector (Card)--}}
 <div class="col sm-4">
   <div class="card">
+    <h2 class="text-center">{{user.username}}'s Top Scores!</h2>
         <ul class="list-group list-group-flush">
         {{#each topPlayerScores}}
         <li class="list-group-item">{{this}}</li>

@@ -6,7 +6,6 @@ const helpers = require('./utils/helpers');
 const routes = require('./controllers');
 const helmet = require('helmet');
 
-
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -28,7 +27,7 @@ const sesh = {
   }) 
 };
 
-
+app.use(helmet());
 app.use(session(sesh));
 
 app.engine('handlebars', hbs.engine);

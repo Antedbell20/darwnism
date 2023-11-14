@@ -42,5 +42,8 @@ module.exports = {
             return `Dolphin`;
         }
         
+    },
+    username: ()=>{
+        return `            [user: username]            `
     }
     };
