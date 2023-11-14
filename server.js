@@ -28,6 +28,7 @@ const sesh = {
 };
 
 // app.use(helmet());
+
 app.use(session(sesh));
 
 app.engine('handlebars', hbs.engine);
@@ -46,11 +47,7 @@ sequelize.sync().then(() => {
     )
   );
 });
+app.use(helmet());
 
 
 
-
-
-// sequelize.sync({ force: false }).then(() => {
-//     app.listen(PORT, () => console.log('Now listening at http://localhost:3001'));
-//   });
