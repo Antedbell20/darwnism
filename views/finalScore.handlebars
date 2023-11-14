@@ -13,16 +13,16 @@
 {{!-- Final Score is ?? --}}
 
 <div class="card col m-5" style="width: 40%; height:300px;">
-<div><h2>Your final Score Is: <span id="score"></span></h2></div>
+<div><h2 class="text-white">Your final Score Is: <span id="score"></span></h2></div>
 
   {{!-- Display animal lvl and image --}} 
 
-<div><h2>Your Animal Rank Is: {{determineRank score}}</h2></div>
+<div><h2 class="text-white">Your Animal Rank Is: {{determineRank score}}</h2></div>
 <div>{{{determineRankImg score}}}</div>
 </div>
 
 <div class="card col m-5" style="width: 40%;">
-<h2>Player HighScore History:</h2>
+<h2 class="text-white">Player HighScore History:</h2>
 <ul class="list-group list-group-flush">
 {{#each sortedLimitedScoresArray}}
   
