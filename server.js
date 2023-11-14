@@ -4,7 +4,6 @@ const session = require('express-session');
 const xphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const routes = require('./controllers');
-// const helmet = require('helmet');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -26,8 +25,6 @@ const sesh = {
     db: sequelize,
   }) 
 };
-
-// app.use(helmet());
 
 app.use(session(sesh));
 
