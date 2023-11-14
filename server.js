@@ -47,7 +47,3 @@ sequelize.sync().then(() => {
     )
   );
 });
-app.use(helmet());
-
-
-
